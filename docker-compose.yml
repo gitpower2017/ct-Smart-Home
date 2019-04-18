@@ -1,7 +1,7 @@
 version: '2'
 services:
   nodered:
-    image: ctmagazin/ctnodered
+    image: gitpower2017/ctnodered
     ports:
       - "1880:1880"
     volumes:
@@ -13,21 +13,4 @@ services:
       - SYS_ADMIN
       - NET_ADMIN
     restart: always
-    network_mode: "host"
-  mqtt:
-    image: "eclipse-mosquitto"
-    ports:
-      - "1883:1883"
-      - "9001:9001"
-    volumes:
-      - ./data/mqtt/config:/mosquitto/config
-      - ./data/mqtt/data:/mosquitto/data
-      - ./data/mqtt/log:/mosquitto/log
-    restart: always
-  zigbee:
-    image: koenkk/zigbee2mqtt
-    volumes:
-      - ./data/zigbee:/app/data
-    devices:
-      - "/dev/ttyACM0:/dev/ttyACM0"
-    restart: always
+    network_mode: "bridge"
