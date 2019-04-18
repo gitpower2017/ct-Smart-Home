@@ -1,3 +1,5 @@
+Für meine Anforderung optimiert.
+
 # c't-Smart-Home
 Docker-environment for Node-Red with MQTT, Zigbee2MQTT, HomeKit and Bluetooth-LE-Support
 
